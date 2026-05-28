@@ -1,0 +1,33 @@
+.anim-con-1 {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.5rem;
+	padding: 1.5rem;
+}
+
+.code {
+	max-width: 42rem;
+	width: 100%;
+}
+
+.box-anim {
+	display: grid;
+	place-items: center;
+	min-width: 50%;
+	min-height: 50%;
+	gap: 0.85rem;
+}
+
+.rotate-btn {
+	border: 1px solid #111;
+	background: #fff;
+	color: #111;
+	padding: 0.55rem 0.9rem;
+	border-radius: 0.45rem;
+	font-size: 0.95rem;
+	cursor: pointer;
+}
+
+.rotate-btn:hover {
+	background: #f4f4f4;
+}
