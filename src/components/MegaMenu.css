@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-self: center;
+
+  background-color: rgb(26, 29, 37);
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.navCol {
+}
+
+.navList {
+  /* display: none; */
+  /* visibility: hidden; */
+  margin: 1rem;
+}
+
+.ex {
+  display: flex;
+  flex-direction: column;
+
+  list-style-type: none;
+}
