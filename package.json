@@ -11,8 +11,13 @@
   },
   "dependencies": {
     "framer-motion": "^12.40.0",
+<<<<<<< HEAD
+=======
+    "lucide-react": "^1.3.0",
+>>>>>>> 2ea15dd177daeec7e4cfa322fca4b9b723ba9e00
     "motion": "^12.40.0",
     "react": "^19.2.6",
+    "react-code-blocks": "^0.1.6",
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
