@@ -1,12 +1,11 @@
-.anim-con-1 {
+.anim-con-2 {
 	display: flex;
 	align-items: stretch;
 	gap: 1.5rem;
 	padding: 1.5rem;
 }
 
-
-.anim-con-1 .code {
+.anim-con-2 .code {
 	flex: 1 1 60%;
 	min-width: 320px;
 	padding: 0.8rem;
@@ -19,43 +18,29 @@
 	overflow: hidden;
 }
 
-.anim-con-1 .code pre,
-.anim-con-1 .code code {
+.anim-con-2 .code pre,
+.anim-con-2 .code code {
 	background: transparent !important;
+    padding-top: 120px;
 }
 
-.box-anim {
+.anim-shapes {
 	flex: 1 1 40%;
 	min-height: 220px;
 	min-width: 260px;
 	display: grid;
 	place-items: center;
-	gap: 0.85rem;
 	background: rgba(15, 23, 42, 0.08);
 	border: 1px dashed rgba(30, 41, 59, 0.25);
 }
 
-.rotate-btn {
-	border: 1px solid #111;
-	background: #fff;
-	color: #111;
-	padding: 0.55rem 0.9rem;
-	border-radius: 0.45rem;
-	font-size: 0.95rem;
-	cursor: pointer;
-}
-
-.rotate-btn:hover {
-	background: #f4f4f4;
-}
-
 @media (max-width: 900px) {
-	.anim-con-1 {
+	.anim-con-2 {
 		flex-direction: column;
 	}
 
-	.anim-con-1 .code,
-	.box-anim {
+	.anim-con-2 .code,
+	.anim-shapes {
 		min-width: 0;
 	}
 }

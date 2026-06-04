@@ -17,6 +17,11 @@ export default function Box({ code = '', language = 'jsx' } = {}) {
                     language={language}
                     showLineNumbers={true}
                     theme={dracula}
+                    customStyle={{
+                        background: 'transparent',
+                        margin: 0,
+                        boxShadow: 'none'
+                    }}
                 />
             </div>
             <div className="box-anim">

@@ -1,30 +1,76 @@
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import "./MegaMenu.css";
 
-export default function MegaMenu() {
-  return (
-    <>
-      <nav className="navbar">
-        <div className="navCol">
-          <li>
-            <th>Example 1 List</th>
-            <th>Example 2 List</th>
-          </li>
-        </div>
+export default function Header() {
+  const [activeMenu, setActiveMenu] = useState(null);
 
-        <div className="navList">
-          <ul className="ex">
-            <li>Example 1 Item #1</li>
-            <li>Example 1 Item #2</li>
-            <li>Example 1 Item #3</li>
-          </ul>
-          <ul className="ex">
-            <li>Example 2 Item #1</li>
-            <li>Example 2 Item #2</li>
-            <li>Example 2 Item #3</li>
-          </ul>
-        </div>
+  const menuData = {
+    products: [
+      "Website Builder",
+      "Analytics",
+      "E-commerce",
+      "Hosting"
+    ],
+    resources: [
+      "Documentation",
+      "Blog",
+      "Tutorials",
+      "Community"
+    ]
+  };
+
+  return (
+    <header className="header">
+      <nav
+        className="nav"
+        onMouseLeave={() => setActiveMenu(null)}
+      >
+        <button
+          onMouseEnter={() => setActiveMenu("products")}
+        >
+          Products
+        </button>
+
+        <button
+          onMouseEnter={() => setActiveMenu("resources")}
+        >
+          Resources
+        </button>
+
+        <AnimatePresence>
+          {activeMenu && (
+            <motion.div
+              className="mega-menu"
+              initial={{
+                opacity: 0,
+                y: -10
+              }}
+              animate={{
+                opacity: 1,
+                y: 0
+              }}
+              exit={{
+                opacity: 0,
+                y: -10
+              }}
+              transition={{
+                duration: 0.2
+              }}
+            >
+              {menuData[activeMenu].map((item) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  {item}
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
-    </>
-  );
+    </header>
+  )
 }
