@@ -1,0 +1,139 @@
+main {
+  background-color: black;
+}
+
+:root {
+  --bg-deep: #05070d;
+  --bg-mid: #0b1422;
+  --mist-cyan: rgba(72, 169, 255, 0.2);
+  --mist-blue: rgba(38, 93, 202, 0.18);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f5f9;
+  background: #e7edf5;
+}
+
+.app-content {
+  position: relative;
+}
+
+.fx-zone {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 1rem 1.5rem 2rem;
+  border: 1px solid rgba(29, 78, 216, 0.16);
+}
+
+.fx-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%);
+}
+
+.haze {
+  position: absolute;
+  filter: blur(55px);
+  mix-blend-mode: screen;
+  border-radius: 50%;
+  opacity: 0.65;
+}
+
+.haze-1 {
+  width: 48%;
+  height: 70%;
+  left: -10%;
+  top: -18%;
+  animation: driftOne 22s ease-in-out infinite alternate;
+}
+
+.haze-2 {
+  width: 44%;
+  height: 74%;
+  right: -12%;
+  top: 8%;
+  animation: driftTwo 28s ease-in-out infinite alternate;
+}
+
+.haze-3 {
+  width: 56%;
+  height: 84%;
+  left: 25%;
+  bottom: -28%;
+  background: radial-gradient(circle at 45% 50%, rgba(130, 205, 255, 0.17), transparent 64%);
+  animation: driftThree 26s ease-in-out infinite alternate;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.17;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 5px);
+  background-size: 3px 3px, 14px 14px;
+  animation: grainShift 1.2s steps(2, end) infinite;
+}
+
+.fx-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+@keyframes driftOne {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5vw, 3vh, 0) scale(1.08);
+  }
+}
+
+@keyframes driftTwo {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-7vw, -4vh, 0) scale(1.1);
+  }
+}
+
+@keyframes driftThree {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.98);
+  }
+  to {
+    transform: translate3d(4vw, -5vh, 0) scale(1.06);
+  }
+}
+
+@keyframes grainShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1%, 1%);
+  }
+  50% {
+    transform: translate(1%, -1%);
+  }
+  75% {
+    transform: translate(1%, 1%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

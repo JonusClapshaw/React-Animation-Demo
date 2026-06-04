@@ -1,26 +1,30 @@
-<<<<<<< HEAD
-import { useState } from "react";
 import MegaMenu from "./components/MegaMenu";
-import "./App.css";
-=======
-import { useState } from 'react'
-import { motion } from "motion/react"
-
 import Header from './components/Header'
 import Box from './components/Simple-Box-Roll'
+import KeyFrameAnim from './components/Key-Frame-Animation'
 
 import './App.css'
->>>>>>> 2ea15dd177daeec7e4cfa322fca4b9b723ba9e00
 
 function App() {
   return (
-    <>
-<<<<<<< HEAD
+    <main className="app-content">
+      <Header />
       <MegaMenu />
-=======
-      <Box />
->>>>>>> 2ea15dd177daeec7e4cfa322fca4b9b723ba9e00
-    </>
+
+      <section className="fx-zone">
+        <div className="fx-bg" aria-hidden="true">
+          <div className="haze haze-1" />
+          <div className="haze haze-2" />
+          <div className="haze haze-3" />
+          <div className="grain" />
+        </div>
+
+        <div className="fx-content">
+          <Box />
+          <KeyFrameAnim />
+        </div>
+      </section>
+    </main>
   );
 }
 
