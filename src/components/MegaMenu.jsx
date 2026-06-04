@@ -5,7 +5,7 @@ export default function MegaMenu() {
   return (
     <>
       <nav className="navbar">
-        <div className="navCol">
+        <div className="navCol ">
           <li>
             <th>Example 1 List</th>
             <th>Example 2 List</th>
