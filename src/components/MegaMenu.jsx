@@ -2,75 +2,52 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import "./MegaMenu.css";
 
-export default function Header() {
-  const [activeMenu, setActiveMenu] = useState(null);
-
-  const menuData = {
-    products: [
-      "Website Builder",
-      "Analytics",
-      "E-commerce",
-      "Hosting"
-    ],
-    resources: [
-      "Documentation",
-      "Blog",
-      "Tutorials",
-      "Community"
-    ]
-  };
+export default function MegaMenu() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="header">
-      <nav
-        className="nav"
-        onMouseLeave={() => setActiveMenu(null)}
-      >
-        <button
-          onMouseEnter={() => setActiveMenu("products")}
-        >
-          Products
-        </button>
+    <nav
+      className="navbar"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <ul className="navLinks">
+        <li>Home</li>
+        <li>Products</li>
+        <li>About</li>
+      </ul>
 
-        <button
-          onMouseEnter={() => setActiveMenu("resources")}
-        >
-          Resources
-        </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="megaMenu"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{
+              duration: 0.25,
+              type: "spring",
+              stiffness: 200,
+            }}
+          >
+            <div className="column">
+              <h3>Example 1 List</h3>
 
-        <AnimatePresence>
-          {activeMenu && (
-            <motion.div
-              className="mega-menu"
-              initial={{
-                opacity: 0,
-                y: -10
-              }}
-              animate={{
-                opacity: 1,
-                y: 0
-              }}
-              exit={{
-                opacity: 0,
-                y: -10
-              }}
-              transition={{
-                duration: 0.2
-              }}
-            >
-              {menuData[activeMenu].map((item) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  {item}
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </header>
-  )
+              <a href="#">Example 1 Item #1</a>
+              <a href="#">Example 1 Item #2</a>
+              <a href="#">Example 1 Item #3</a>
+            </div>
+
+            <div className="column">
+              <h3>Example 2 List</h3>
+
+              <a href="#">Example 2 Item #1</a>
+              <a href="#">Example 2 Item #2</a>
+              <a href="#">Example 2 Item #3</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
 }
