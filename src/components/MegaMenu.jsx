@@ -1,30 +1,53 @@
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import "./MegaMenu.css";
 
 export default function MegaMenu() {
-  return (
-    <>
-      <nav className="navbar">
-        <div className="navCol ">
-          <li>
-            <th>Example 1 List</th>
-            <th>Example 2 List</th>
-          </li>
-        </div>
+  const [isOpen, setIsOpen] = useState(false);
 
-        <div className="navList">
-          <ul className="ex">
-            <li>Example 1 Item #1</li>
-            <li>Example 1 Item #2</li>
-            <li>Example 1 Item #3</li>
-          </ul>
-          <ul className="ex">
-            <li>Example 2 Item #1</li>
-            <li>Example 2 Item #2</li>
-            <li>Example 2 Item #3</li>
-          </ul>
-        </div>
-      </nav>
-    </>
+  return (
+    <nav
+      className="navbar"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <ul className="navLinks">
+        <li>Home</li>
+        <li>Products</li>
+        <li>About</li>
+      </ul>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="megaMenu"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{
+              duration: 0.25,
+              type: "spring",
+              stiffness: 200,
+            }}
+          >
+            <div className="column">
+              <h3>Example 1 List</h3>
+
+              <a href="#">Example 1 Item #1</a>
+              <a href="#">Example 1 Item #2</a>
+              <a href="#">Example 1 Item #3</a>
+            </div>
+
+            <div className="column">
+              <h3>Example 2 List</h3>
+
+              <a href="#">Example 2 Item #1</a>
+              <a href="#">Example 2 Item #2</a>
+              <a href="#">Example 2 Item #3</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 }

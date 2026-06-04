@@ -1,25 +1,48 @@
 .navbar {
-  display: flex;
-  justify-self: center;
-
-  background-color: rgb(26, 29, 37);
+  position: relative;
+  padding: 1rem 4rem;
+  background: #222;
   color: white;
-  border-radius: 5px;
-  padding: 5px;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
 }
 
-.navCol {
-}
-
-.navList {
-  /* display: none; */
-  /* visibility: hidden; */
-  margin: 1rem;
-}
-
-.ex {
+.navLinks {
   display: flex;
-  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  color: white;
+}
 
-  list-style-type: none;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  gap: 4rem;
+
+  padding: 2rem;
+  margin: 1rem 0rem;
+
+  background: #222;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  margin: 0.5rem 0;
 }
