@@ -11,11 +11,11 @@ export default function MegaMenu() {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <ul className="navLinks">
-        <li>Home</li>
-        <li>Products</li>
-        <li>About</li>
-      </ul>
+      <div className="navLinks">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Code Example</a>
+      </div>
 
       <AnimatePresence>
         {isOpen && (
@@ -26,24 +26,39 @@ export default function MegaMenu() {
             exit={{ opacity: 0, y: -10 }}
             transition={{
               duration: 0.25,
-              type: "spring",
               stiffness: 200,
             }}
           >
             <div className="column">
               <h3>Example 1 List</h3>
 
-              <a href="#">Example 1 Item #1</a>
-              <a href="#">Example 1 Item #2</a>
-              <a href="#">Example 1 Item #3</a>
+              <ul>
+                <li>
+                  <a href="#">Example 1 Item #1</a>{" "}
+                </li>
+                <li>
+                  <a href="#">Example 1 Item #2</a>
+                </li>
+                <li>
+                  <a href="#">Example 1 Item #3</a>
+                </li>
+              </ul>
             </div>
 
             <div className="column">
               <h3>Example 2 List</h3>
 
-              <a href="#">Example 2 Item #1</a>
-              <a href="#">Example 2 Item #2</a>
-              <a href="#">Example 2 Item #3</a>
+              <ul>
+                <li>
+                  <a href="#">Example 2 Item #1</a>{" "}
+                </li>
+                <li>
+                  <a href="#">Example 2 Item #2</a>
+                </li>
+                <li>
+                  <a href="#">Example 2 Item #3</a>
+                </li>
+              </ul>
             </div>
           </motion.div>
         )}

@@ -1,7 +1,14 @@
+* {
+  box-sizing: border-box;
+  color: white;
+}
+
 .navbar {
+  background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%);
   position: relative;
+  z-index: 1000;
   padding: 1rem 4rem;
-  background: #222;
+  /* background: #222; */
   color: white;
   justify-content: center;
   justify-self: center;
@@ -33,8 +40,9 @@ a {
   padding: 2rem;
   margin: 1rem 0rem;
 
-  background: #222;
+  background: #2e3149;
 
+  box-sizing: border-box;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -73,7 +81,11 @@ a {
   border-radius: 0.9rem;
   color: #f8fafc;
   background:
-    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.25), transparent 45%),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(56, 189, 248, 0.25),
+      transparent 45%
+    ),
     linear-gradient(160deg, #1e293b 0%, #0f172a 100%);
   border: 1px solid rgba(148, 163, 184, 0.3);
   box-shadow: 0 16px 28px rgba(2, 6, 23, 0.45);
@@ -88,4 +100,3 @@ a {
 .mega-menu > div:hover {
   background: rgba(148, 163, 184, 0.16);
 }
-
