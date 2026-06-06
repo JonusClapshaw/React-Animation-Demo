@@ -10,7 +10,6 @@ function App() {
     <main className="app-content">
       <Header />
 
-      <MegaMenu />
       <section className="fx-zone">
         <div className="fx-bg" aria-hidden="true">
           <div className="haze haze-1" />
@@ -20,6 +19,7 @@ function App() {
         </div>
 
         <div className="fx-content">
+          <MegaMenu />
           <Box />
           <KeyFrameAnim />
         </div>

@@ -71,7 +71,11 @@ body {
   height: 84%;
   left: 25%;
   bottom: -28%;
-  background: radial-gradient(circle at 45% 50%, rgba(130, 205, 255, 0.17), transparent 64%);
+  background: radial-gradient(
+    circle at 45% 50%,
+    rgba(130, 205, 255, 0.17),
+    transparent 64%
+  );
   animation: driftThree 26s ease-in-out infinite alternate;
 }
 
@@ -79,9 +83,14 @@ body {
   position: absolute;
   inset: 0;
   opacity: 0.17;
-  background-image:
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 5px);
-  background-size: 3px 3px, 14px 14px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.015) 0 2px,
+    transparent 2px 5px
+  );
+  background-size:
+    3px 3px,
+    14px 14px;
   animation: grainShift 1.2s steps(2, end) infinite;
 }
 
