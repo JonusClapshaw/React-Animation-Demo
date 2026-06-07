@@ -44,10 +44,9 @@ body {
 
 .haze {
   position: absolute;
-  filter: blur(55px);
-  mix-blend-mode: screen;
+  filter: blur(28px);
   border-radius: 50%;
-  opacity: 0.65;
+  opacity: 0.45;
 }
 
 .haze-1 {
@@ -55,7 +54,7 @@ body {
   height: 70%;
   left: -10%;
   top: -18%;
-  animation: driftOne 22s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .haze-2 {
@@ -63,7 +62,7 @@ body {
   height: 74%;
   right: -12%;
   top: 8%;
-  animation: driftTwo 28s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .haze-3 {
@@ -76,13 +75,13 @@ body {
     rgba(130, 205, 255, 0.17),
     transparent 64%
   );
-  animation: driftThree 26s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .grain {
   position: absolute;
   inset: 0;
-  opacity: 0.17;
+  opacity: 0.08;
   background-image: repeating-linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.015) 0 2px,
@@ -91,7 +90,7 @@ body {
   background-size:
     3px 3px,
     14px 14px;
-  animation: grainShift 1.2s steps(2, end) infinite;
+  animation: none;
 }
 
 .fx-content {

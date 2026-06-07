@@ -126,4 +126,7 @@ a {
   gap: 2rem;
   align-items: flex-start;
   padding: 1.5rem;
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
+  contain: layout paint style;
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import "./MegaMenu.css";
 import { CodeBlock, dracula } from "react-code-blocks";
@@ -7,20 +7,26 @@ export default function MegaMenu({ code = "", language = "jsx" } = {}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const codeToDisplay = code.trim().length > 0 ? code : megaMenuCode;
+  const codePanel = useMemo(
+    () => (
+      <CodeBlock
+        text={codeToDisplay}
+        language={language}
+        showLineNumbers={true}
+        theme={dracula}
+        customStyle={{
+          padding: "1rem",
+          background: "transparent",
+        }}
+      />
+    ),
+    [codeToDisplay, language]
+  );
 
   return (
     <div className="megaMenuDemo">
       <div className="code">
-        <CodeBlock
-          text={codeToDisplay}
-          language={language}
-          showLineNumbers={true}
-          theme={dracula}
-          customStyle={{
-            padding: "1rem",
-            background: "transparent",
-          }}
-        />
+        {codePanel}
       </div>
       <nav
         className="navbar"

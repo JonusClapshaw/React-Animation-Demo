@@ -3,6 +3,9 @@
 	align-items: stretch;
 	gap: 1.5rem;
 	padding: 1.5rem;
+	content-visibility: auto;
+	contain-intrinsic-size: 360px;
+	contain: layout paint style;
 }
 
 .anim-con-2 .code {
@@ -13,8 +16,7 @@
 		radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.25), transparent 45%),
 		linear-gradient(160deg, #1e293b 0%, #0f172a 100%);
 	border: 1px solid rgba(148, 163, 184, 0.3);
-	box-shadow: 0 16px 28px rgba(2, 6, 23, 0.45);
-	backdrop-filter: blur(2px);
+	box-shadow: 0 10px 18px rgba(2, 6, 23, 0.32);
 	overflow: hidden;
 }
 

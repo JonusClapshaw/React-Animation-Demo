@@ -1,5 +1,8 @@
 .header-shell {
     padding: 1.5rem;
+    content-visibility: auto;
+    contain-intrinsic-size: 520px;
+    contain: layout paint style;
 }
 
 .header-panel {
