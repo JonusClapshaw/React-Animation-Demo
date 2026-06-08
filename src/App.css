@@ -101,6 +101,36 @@ body {
   padding: 0.5rem 0;
 }
 
+.definition-motion {
+  margin: 1.2rem 1.5rem 0.6rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background:
+    radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.14), transparent 38%),
+    linear-gradient(160deg, #152238 0%, #0b1424 100%);
+  box-shadow: 0 8px 16px rgba(2, 6, 23, 0.26);
+  content-visibility: auto;
+  contain: layout paint style;
+}
+
+.definition-motion h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.2rem;
+  color: #f8fafc;
+}
+
+.definition-motion p {
+  margin: 0 0 0.55rem;
+  line-height: 1.55;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.definition-motion ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: rgba(226, 232, 240, 0.86);
+}
+
 @keyframes driftOne {
   from {
     transform: translate3d(0, 0, 0) scale(1);

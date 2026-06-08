@@ -1,5 +1,6 @@
 import MegaMenu from "./components/MegaMenu";
 import Header from "./components/Header";
+import DefinitionMotion from "./components/DefinitionMotion";
 import Box from "./components/Simple-Box-Roll";
 import KeyFrameAnim from "./components/Key-Frame-Animation";
 import ParallapticBackground from "./components/Parallaptic-background";
@@ -22,6 +23,7 @@ function App() {
         <div className="fx-content">
           <MegaMenu />
           <Box />
+          <DefinitionMotion />
           <KeyFrameAnim />
           <ParallapticBackground />
         </div>

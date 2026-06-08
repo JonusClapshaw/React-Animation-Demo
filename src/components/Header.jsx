@@ -5,7 +5,7 @@ export default function Header() {
         <header className="header-shell">
             <section className="header-panel">
                 <div className="header-copy">
-                    <p className="header-kicker">React + Motion Demo</p>
+                    <p className="header-kicker">Motion Demo</p>
                     <h1>Jonus and Kevin Animation Demo</h1>
                     <p className="header-intro">
                         Motion is a React library for creating animations and interactive
